@@ -10,5 +10,8 @@ class Localidad extends Model
     use HasFactory;
     protected $guarded=[];
 
-    
+    //relacion muchos a muchos
+    public function eventos(){
+        return $this->belongsToMany('App\Models\evento');
+    }
 }

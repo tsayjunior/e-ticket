@@ -21,4 +21,9 @@ class Evento extends Model
     public function contactoEventos(){
         return $this->hasMany('App\Models\ContactoEvento');
     }
+
+    //relacion muchos a muchos
+    public function localidads(){
+        return $this->belongsToMany('App\Models\Localidad');
+    }
 }
