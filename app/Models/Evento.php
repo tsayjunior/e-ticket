@@ -16,4 +16,9 @@ class Evento extends Model
     public function categoria(){
         return $this->belongsTo('App\Models\categoria');
     }
+
+    //relación uno a muchos
+    public function contactoEventos(){
+        return $this->hasMany('App\Models\ContactoEvento');
+    }
 }

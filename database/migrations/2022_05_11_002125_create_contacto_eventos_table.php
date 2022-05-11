@@ -15,6 +15,14 @@ class CreateContactoEventosTable extends Migration
     {
         Schema::create('contacto_eventos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 30);
+            $table->string('descripcion', 50);
+            $table->unsignedBigInteger('telefono');
+
+            $table->unsignedBigInteger('evento_id')->nullable();
+            $table->foreign('evento_id')
+                            ->references('id')->on('eventos')
+                            ->ondelete('set null');
             $table->timestamps();
         });
     }

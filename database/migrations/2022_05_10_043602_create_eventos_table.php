@@ -15,8 +15,8 @@ class CreateEventosTable extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('nombre', 40);
+            $table->string('descripcion', 60);
             $table->string('estado');
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->foreign('categoria_id')

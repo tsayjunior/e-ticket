@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ContactoEventoController;
 use App\Http\Controllers\EventoController;
+use App\Http\Controllers\LocalidadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('eventos', EventoController::class);
 Route::apiResource('categorias', CategoriaController::class);
+Route::apiResource('contactoEventos', ContactoEventoController::class);
+Route::apiResource('localidads', LocalidadController::class);
