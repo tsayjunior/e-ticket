@@ -10,8 +10,9 @@ class Categoria extends Model
     use HasFactory;
     protected $guarded=[];
     protected $table = "categorias";
+
     //relación uno a muchos
     public function eventos(){
-        return $this->hasmany('App\Models\evento');
+        return $this->hasMany('App\Models\evento');
     }
 }

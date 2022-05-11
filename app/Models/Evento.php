@@ -10,4 +10,10 @@ class Evento extends Model
     use HasFactory;
 
     protected $table = "eventos";
+    protected $guarded=[];
+
+    //relación uno a muchos (invertido)
+    public function categoria(){
+        return $this->belongsTo('App\Models\categoria');
+    }
 }

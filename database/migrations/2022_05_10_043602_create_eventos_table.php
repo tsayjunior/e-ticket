@@ -18,8 +18,8 @@ class CreateEventosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('estado');
-            $table->unsignedBigInteger('id_categoria')->nullable()->after('estado');
-            $table->foreign('id_categoria')
+            $table->unsignedBigInteger('categoria_id')->nullable();
+            $table->foreign('categoria_id')
                             ->references('id')->on('categorias')
                             ->ondelete('set null');
             $table->timestamps();

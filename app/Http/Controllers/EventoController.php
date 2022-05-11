@@ -41,7 +41,7 @@ class EventoController extends Controller
         $evento->nombre= $request->nombre;
         $evento->descripcion= $request->descripcion;
         $evento->estado= $request->estado;
-        $evento->id_categoria= $request->id_categoria;
+        $evento->categoria_id= $request->categoria_id;
         $evento->save();
         return $evento;
     }
@@ -91,7 +91,7 @@ class EventoController extends Controller
         $evento->nombre= $request->nombre;
         $evento->descripcion= $request->descripcion;
         $evento->estado= $request->estado;
-        $evento->id_categoria= $request->id_categoria;
+        $evento->categoria_id= $request->categoria_id;
         $evento->save();
         // return $evento;
         return \response("el evento con id = ${id} ha sido actualizado");
