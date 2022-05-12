@@ -15,6 +15,17 @@ class CreateEspaciosTable extends Migration
     {
         Schema::create('espacios', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('numero');
+            $table->string('descripcion', 30);
+            $table->unsignedBigInteger('capacidad');
+
+            
+            $table->unsignedBigInteger('area_id');
+            $table->foreign('area_id')
+                            ->references('id')->on('areas')
+                            ->ondelete('set null');
+
             $table->timestamps();
         });
     }

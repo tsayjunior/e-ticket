@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(HorarioSeeder::class);
         $this->call(SeccionSeeder::class);
         $this->call(AreaSeeder::class);
-
+        $this->call(EspacioSeeder::class);
+        $this->call(ContactoLocalidadSeeder::class);
         
     }
 }

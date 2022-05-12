@@ -3,11 +3,14 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ContactoEventoController;
+use App\Http\Controllers\ContactoLocalidadController;
+use App\Http\Controllers\EspacioController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\EventoLocalidadController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\LocalidadController;
 use App\Http\Controllers\SeccionController;
+use App\Models\ContactoLocalidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +37,5 @@ Route::apiResource('evento_localidads', EventoLocalidadController::class);
 Route::apiResource('horarios', HorarioController::class);
 Route::apiResource('seccions', SeccionController::class);
 Route::apiResource('areas', AreaController::class);
+Route::apiResource('espacios', EspacioController::class);
+Route::apiResource('contactoLocalidads', ContactoLocalidadController::class);

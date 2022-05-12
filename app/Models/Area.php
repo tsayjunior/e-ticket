@@ -20,4 +20,9 @@ class Area extends Model
     public function seccion(){
         return $this->belongsTo('App\Models\Seccion');
     }
+
+    //relación uno a muchos con espacio
+    public function espacios(){
+        return $this->hasMany('App\Models\Espacio');
+    }
 }
