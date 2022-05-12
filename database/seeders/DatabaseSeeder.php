@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactoEventoSeeder::class);
         $this->call(LocalidadSeeder::class);
         $this->call(EventoLocalidadSeeder::class);
+        $this->call(HorarioSeeder::class);
+        $this->call(SeccionSeeder::class);
+        $this->call(AreaSeeder::class);
 
         
     }

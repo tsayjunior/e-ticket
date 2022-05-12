@@ -12,4 +12,9 @@ class EventoLocalidad extends Model
     protected $guarded=[];
 
     protected $table = "evento_localidad";
+
+    //relación uno a muchos con horario
+    public function horarios(){
+        return $this->hasMany('App\Models\Horario');
+    }
 }

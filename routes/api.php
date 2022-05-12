@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ContactoEventoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\EventoLocalidadController;
+use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\LocalidadController;
+use App\Http\Controllers\SeccionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +31,6 @@ Route::apiResource('categorias', CategoriaController::class);
 Route::apiResource('contactoEventos', ContactoEventoController::class);
 Route::apiResource('localidads', LocalidadController::class);
 Route::apiResource('evento_localidads', EventoLocalidadController::class);
+Route::apiResource('horarios', HorarioController::class);
+Route::apiResource('seccions', SeccionController::class);
+Route::apiResource('areas', AreaController::class);
