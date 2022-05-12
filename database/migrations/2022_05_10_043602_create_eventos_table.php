@@ -17,7 +17,7 @@ class CreateEventosTable extends Migration
             $table->id();
             $table->string('nombre', 40);
             $table->string('descripcion', 60);
-            $table->string('estado');
+            $table->string('estado', 40);
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->foreign('categoria_id')
                             ->references('id')->on('categorias')

@@ -26,6 +26,14 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'color'=>'max:30',
+            'cantidad'=>'required',
+            'precio'=>'required',
+            'referencia'=>'required|max:40',
+            'horario_id'=>'required',
+            'seccion_id'=>'required'
+        ]);
         $area= new Area();
         $area->color= $request->color;
         $area->cantidad= $request->cantidad;
@@ -58,6 +66,14 @@ class AreaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'color'=>'max:30',
+            'cantidad'=>'required',
+            'precio'=>'required',
+            'referencia'=>'required|max:40',
+            'horario_id'=>'required',
+            'seccion_id'=>'required'
+        ]);
         $area=Area::findOrFail($id);
         $area->color= $request->color;
         $area->cantidad= $request->cantidad;

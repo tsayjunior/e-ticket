@@ -26,6 +26,12 @@ class ContactoLocalidadController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre'=>'required|max:30',
+            'descripcion'=>'required|max:50',
+            'telefono'=>'required',
+            'localidad_id'=>'required'
+        ]);
         $contactolocalidads= new ContactoLocalidad();
         $contactolocalidads->nombre= $request->nombre;
         $contactolocalidads->descripcion= $request->descripcion;
@@ -56,6 +62,12 @@ class ContactoLocalidadController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre'=>'required|max:30',
+            'descripcion'=>'required|max:50',
+            'telefono'=>'required',
+            'localidad_id'=>'required'
+        ]);
         $contactolocalidads= ContactoLocalidad::findOrFail($id);
         $contactolocalidads->nombre= $request->nombre;
         $contactolocalidads->descripcion= $request->descripcion;

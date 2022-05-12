@@ -26,6 +26,9 @@ class SeccionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre'=>'required|max:30',
+        ]);
         $seccion= new Seccion();
         $seccion->nombre= $request->nombre;
         $seccion->save();
@@ -53,6 +56,9 @@ class SeccionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre'=>'required|max:30',
+        ]);
         $seccion=Seccion::findOrFail($id)->update($request->all());
         // $evento=Evento::findOrFail($id);
         // return $evento;

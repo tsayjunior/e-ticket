@@ -26,6 +26,11 @@ class HorarioController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'fecha_y_hora'=>'required',
+            'duracion'=>'required',
+            'evento_localidad_id'=>'required'
+        ]);
         $horario= new Horario();
         $horario->fecha_y_hora= $request->fecha_y_hora;
         $horario->duracion= $request->duracion;
@@ -55,6 +60,11 @@ class HorarioController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'fecha_y_hora'=>'required',
+            'duracion'=>'required',
+            'evento_localidad_id'=>'required'
+        ]);
         $horario= Horario::findOrFail($id);
         $horario->fecha_y_hora= $request->fecha_y_hora;
         $horario->duracion= $request->duracion;

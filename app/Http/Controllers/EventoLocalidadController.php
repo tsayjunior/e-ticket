@@ -26,6 +26,10 @@ class EventoLocalidadController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'localidad_id'=>'required',
+            'evento_id'=>'required'
+        ]);
         $eventolocalidad= new EventoLocalidad();
         $eventolocalidad->localidad_id= $request->localidad_id;
         $eventolocalidad->evento_id= $request->evento_id;
@@ -54,6 +58,10 @@ class EventoLocalidadController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'localidad_id'=>'required',
+            'evento_id'=>'required'
+        ]);
         $eventolocalidad=EventoLocalidad::findOrFail($id);
         $eventolocalidad->localidad_id= $request->localidad_id;
         $eventolocalidad->evento_id= $request->evento_id;

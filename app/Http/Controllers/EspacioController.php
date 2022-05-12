@@ -26,6 +26,12 @@ class EspacioController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'numero'=>'required',
+            'descripcion'=>'required|max:30',
+            'capacidad'=>'required',
+            'area_id'=>'required'
+        ]);
         $espacio= new Espacio();
         $espacio->numero= $request->numero;
         $espacio->descripcion= $request->descripcion;
@@ -56,6 +62,12 @@ class EspacioController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'numero'=>'required',
+            'descripcion'=>'required|max:30',
+            'capacidad'=>'required',
+            'area_id'=>'required'
+        ]);
         $espacio=Espacio::findOrFail($id);
         $espacio->numero= $request->numero;
         $espacio->descripcion= $request->descripcion;

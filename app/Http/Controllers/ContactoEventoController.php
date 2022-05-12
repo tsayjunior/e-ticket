@@ -26,7 +26,12 @@ class ContactoEventoController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'nombre'=>'required|max:30',
+            'descripcion'=>'required|max:50',
+            'telefono'=>'required',
+            'evento_id'=>'required'
+        ]);
         $contactoEvento= new ContactoEvento();
         $contactoEvento->nombre= $request->nombre;
         $contactoEvento->descripcion= $request->descripcion;
@@ -57,6 +62,12 @@ class ContactoEventoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre'=>'required|max:30',
+            'descripcion'=>'required|max:50',
+            'telefono'=>'required',
+            'evento_id'=>'required'
+        ]);
         $contactoEvento= ContactoEvento::findOrFail($id);
         $contactoEvento->nombre= $request->nombre;
         $contactoEvento->descripcion= $request->descripcion;

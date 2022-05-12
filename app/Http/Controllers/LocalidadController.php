@@ -26,6 +26,12 @@ class LocalidadController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'ubicacion'=>'required|max:30',
+            'direccion'=>'required|max:30',
+            'nombre'=>'required|max:30',
+            'capacidad'=>'required'
+        ]);
         $localidad= new Localidad();
         $localidad->ubicacion= $request->ubicacion;
         $localidad->direccion= $request->direccion;
@@ -56,6 +62,12 @@ class LocalidadController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'ubicacion'=>'required|max:30',
+            'direccion'=>'required|max:30',
+            'nombre'=>'required|max:30',
+            'capacidad'=>'required'
+        ]);
         $localidad=Localidad::findOrFail($id)->update($request->all());
         // $evento=Evento::findOrFail($id);
         // return $evento;

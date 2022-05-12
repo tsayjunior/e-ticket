@@ -37,6 +37,12 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre'=>'required|max:40',
+            'descripcion'=>'required|max:60',
+            'estado'=>'required|max:40',
+            'categoria_id'=>'required'
+        ]);
         $evento= new Evento();
         $evento->nombre= $request->nombre;
         $evento->descripcion= $request->descripcion;
@@ -86,7 +92,12 @@ class EventoController extends Controller
         // return $evento;
 
         // $evento=Evento::findOrFail($id)->update($request->all());
-
+        $request->validate([
+            'nombre'=>'required|max:40',
+            'descripcion'=>'required|max:60',
+            'estado'=>'required|max:40',
+            'categoria_id'=>'required'
+        ]);
         $evento=Evento::findOrFail($id);
         $evento->nombre= $request->nombre;
         $evento->descripcion= $request->descripcion;
